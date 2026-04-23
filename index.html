@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Services Hub | Kampala</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1>🌍 Agnes's Local Services Hub</h1>
+      <p>Find education, food, hospitals, and more in Kampala</p>
+
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input 
+          type="text" 
+          id="search" 
+          placeholder="Search for 'Makerere' or 'Pizza'..." 
+          onkeyup="searchItems()">
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <button class="nav-btn active" onclick="showCategory('education')"><i class="fas fa-graduation-cap"></i> Education</button>
+    <button class="nav-btn" onclick="showCategory('restaurant')"><i class="fas fa-utensils"></i> Restaurants</button>
+    <button class="nav-btn" onclick="showCategory('supermarket')"><i class="fas fa-shopping-cart"></i> Supermarket</button>
+    <button class="nav-btn" onclick="showCategory('hospital')"><i class="fas fa-hospital"></i> Hospitals</button>
+    <button class="nav-btn" onclick="showCategory('pharmacy')"><i class="fas fa-pills"></i> Pharmacy</button>
+    <button class="nav-btn top-rated" onclick="showTopRated()"><i class="fas fa-star"></i> Top Rated</button>
+  </nav>
+
+  <main>
+    <section id="content" class="content">
+      </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body">
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-info">
+      <p>&copy; 2026 Agnes's Local Services Hub | Frontend Project</p>
+      <p>Made with <i class="fas fa-heart" style="color: red;"></i> in Uganda</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
