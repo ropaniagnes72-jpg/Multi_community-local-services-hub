@@ -21,9 +21,9 @@ The Agnes Local Service Hub is designed for:
 •	Visual Accessibility: To use a high-quality visual layout (images for every service) that helps users recognize establishments before they visit.
 
 # The technologies l used as  a front-end -skill.
-├── index-2.html          (Main HTML file)
-├── style-3.css           (Custom styling)
-├── script-3.js           (Data logic and interactivity)
+├── index.html          (Main HTML file)
+├── style.css           (Custom styling)
+├── script.js           (Data logic and interactivity)
 │
 └── /images               (Folder for all my local photos)
     ├── Muk.jpeg
