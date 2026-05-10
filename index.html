@@ -3,60 +3,333 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Local Services Hub | Kampala</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="style.css">
+  <title>Agnes Local Service Hub | Kampala</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style-3.css">
 </head>
 <body>
 
-  <header>
-    <div class="header-content">
-      <h1>🌍 Agnes's Local Services Hub</h1>
-      <p>Find education, food, hospitals, and more in Kampala</p>
-
-      <div class="search-container">
-        <i class="fas fa-search search-icon"></i>
-        <input 
-          type="text" 
-          id="search" 
-          placeholder="Search for 'Makerere' or 'Pizza'..." 
-          onkeyup="searchItems()">
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon"><i class="fas fa-home"></i></div>
+      <div class="logo-text">
+        <strong>AGNES</strong>
+        <span>LOCAL SERVICE HUB</span>
+        <small>Your Service, Our Priority</small>
       </div>
     </div>
-  </header>
-
-  <nav>
-    <button class="nav-btn active" onclick="showCategory('education')"><i class="fas fa-graduation-cap"></i> Education</button>
-    <button class="nav-btn" onclick="showCategory('restaurant')"><i class="fas fa-utensils"></i> Restaurants</button>
-    <button class="nav-btn" onclick="showCategory('supermarket')"><i class="fas fa-shopping-cart"></i> Supermarket</button>
-    <button class="nav-btn" onclick="showCategory('hospital')"><i class="fas fa-hospital"></i> Hospitals</button>
-    <button class="nav-btn" onclick="showCategory('pharmacy')"><i class="fas fa-pills"></i> Pharmacy</button>
-    <button class="nav-btn top-rated" onclick="showTopRated()"><i class="fas fa-star"></i> Top Rated</button>
-  </nav>
-
-  <main>
-    <section id="content" class="content">
-      </section>
-  </main>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-body">
-        </div>
+    <nav class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <span class="nav-location"><i class="fas fa-map-marker-alt"></i> Kampala</span>
+      <button class="btn-login">Login</button>
+      <button class="btn-signup">Sign Up</button>
     </div>
+    <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <footer>
-    <div class="footer-info">
-      <p>&copy; 2026 Agnes's Local Services Hub | Frontend Project</p>
-      <p>Made with <i class="fas fa-heart" style="color: red;"></i> in Uganda</p>
+  <!--My home background image setting sectuin-->
+  <div class="hero-image"> 
+    <img src="images/viola.jpg" alt="personal photo"> 
+    <p>The service provider</p>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-star"></i> WELCOME TO AGNES LOCAL SERVICE HUB</div>
+
+    <img src="images/background image.png" alt="background-image">
+
+
+  </div>
+
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollToServices()">Get Started <i class="fas fa-arrow-right"></i></button>
+      <button class="btn-outline" onclick="scrollToServices()">Browse Services</button>
     </div>
-  </footer>
+    <div class="hero-stats">
+      <div class="avatars">
+        <div class="av" style="background:#e74c3c">A</div>
+        <div class="av" style="background:#3498db">B</div>
+        <div class="av" style="background:#f39c12">C</div>
+        <div class="av" style="background:#9b59b6">D</div>
+      </div>
+      <div class="rating-badge">
+        <span class="score">5.0</span>
+        <span class="stars-row">★★★★★</span>
+        <span class="count">from 5,000+ happy customers</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-float">
+      <i class="fas fa-shield-alt"></i>
+      <span>Verified Services</span>
+    </div>
+    <div class="hero-illustration">
+      <div class="hero-circle big"></div>
+      <div class="hero-circle small"></div>
+      <div class="hero-icon-grid">
+        <div class="hig"><i class="fas fa-graduation-cap"></i></div>
+        <div class="hig"><i class="fas fa-hospital"></i></div>
+        <div class="hig"><i class="fas fa-utensils"></i></div>
+        <div class="hig"><i class="fas fa-pills"></i></div>
+        <div class="hig"><i class="fas fa-shopping-cart"></i></div>
+        <div class="hig"><i class="fas fa-university"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- SEARCH BAR -->
+<section class="search-bar-section">
+  <div class="search-box">
+    <p class="search-label">Find the service you need</p>
+    <div class="search-row">
+      <div class="search-field">
+        <i class="fas fa-th"></i>
+        <input type="text" id="search" placeholder="e.g. Hospital, University, Pizza..." onkeyup="liveSearch()">
+      </div>
+      <div class="search-field location-field">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Kampala, Uganda</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <button class="btn-search" onclick="liveSearch()"><i class="fas fa-search"></i> Search</button>
+    </div>
+  </div>
+</section>
 
+<!-- POPULAR SERVICES -->
+<section class="popular-services" id="services">
+  <div class="section-label">— POPULAR SERVICES —</div>
+  <h2>Explore Our Most Popular Services</h2>
+
+  <div class="category-pills">
+    <button class="pill active" onclick="filterCategory('All', this)"><i class="fas fa-th"></i> All</button>
+    <button class="pill" onclick="filterCategory('education', this)"><i class="fas fa-graduation-cap"></i> Education</button>
+    <button class="pill" onclick="filterCategory('restaurants', this)"><i class="fas fa-utensils"></i> Restaurants</button>
+    <button class="pill" onclick="filterCategory('supermarket', this)"><i class="fas fa-shopping-cart"></i> Supermarket</button>
+    <button class="pill" onclick="filterCategory('hospitals', this)"><i class="fas fa-hospital"></i> Hospitals</button>
+    <button class="pill" onclick="filterCategory('pharmacy', this)"><i class="fas fa-pills"></i> Pharmacy</button>
+    <button class="pill" onclick="filterCategory('businesses', this)"><i class="fas fa-briefcase"></i> Businesses</button>
+    <button class="pill" onclick="filterCategory('banks', this)"><i class="fas fa-university"></i> Banks</button>
+    <button class="pill" onclick="filterCategory('others', this)"><i class="fas fa-logo"></i> others</button>
+    <button class="pill top-pill" onclick="filterTopRated(this)"><i class="fas fa-star"></i> Top Rated</button>
+  </div>
+
+  <div class="cards-grid" id="content"></div>
+
+  <div class="view-all-wrap">
+    <button class="btn-view-all" onclick="filterCategory('All', document.querySelectorAll('.pill')[0])">View All Services <i class="fas fa-arrow-right"></i></button>
+  </div>
+</section>
+
+<section id="dashboard" class="dashboard-section" style="display: none;">
+  <h2>Welcome to your Dashboard</h2>
+  <div class="dashboard-stats">
+    <div class="stat-box"><h3>12</h3><p>Total Bookings</p></div>
+    <div class="stat-box"><h3>5</h3><p>Active Services</p></div>
+    <div class="stat-box"><h3>UGX 500k</h3><p>Earnings</p></div>
+  </div>
+  <button class="btn-dark" onclick="showCategory('education')">Back to Home</button>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us" id="about">
+  <div class="section-label">— WHY CHOOSE US —</div>
+  <h2>We Make It Simple &amp; Reliable</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon green-bg"><i class="fas fa-shield-alt"></i></div>
+      <h4>Verified Listings</h4>
+      <p>All service providers are verified and background checked.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon blue-bg"><i class="fas fa-calendar-check"></i></div>
+      <h4>Easy to Find</h4>
+      <p>Search and find services in a few clicks, anytime, anywhere.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon yellow-bg"><i class="fas fa-bolt"></i></div>
+      <h4>Fast Results</h4>
+      <p>Get instant results and find the service you need quickly.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon red-bg"><i class="fas fa-tags"></i></div>
+      <h4>Local Focus</h4>
+      <p>100% focused on Kampala services you can trust and access.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-label">— WHAT OUR CLIENTS SAY —</div>
+  <h2>Trusted by Hundreds of Happy Customers</h2>
+  <div class="testimonial-grid">
+    <div class="tcard">
+      <div class="tstars">★★★★★</div>
+      <p>"I found Mulago Hospital easily through this hub. The information was accurate and very helpful!"</p>
+      <div class="tauthor">
+        <div class="tav" style="background:#27ae60">B</div>
+        <div><strong>Brian S.</strong><span>Kampala</span></div>
+      </div>
+    </div>
+    <div class="tcard featured">
+      <div class="tstars">★★★★★</div>
+      <p>"Agnes Local Hub helped me find Cafe Javas and Capital Shoppers near me. My go-to resource!"</p>
+      <div class="tauthor">
+        <div class="tav" style="background:#e74c3c">M</div>
+        <div><strong>Mercy N.</strong><span>Wakiso</span></div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="tstars">★★★★★</div>
+      <p>"Found Makerere University details in seconds. The hub is easy to use and very reliable!"</p>
+      <div class="tauthor">
+        <div class="tav" style="background:#3498db">J</div>
+        <div><strong>James T.</strong><span>Entebbe</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-left">
+    <div class="cta-phone-icon"><i class="fas fa-mobile-alt"></i></div>
+  </div>
+  <div class="cta-center">
+    <h2>Find Services, Anytime, Anywhere</h2>
+    <p>Access Agnes Local Hub and get the best local services at your fingertips.</p>
+  </div>
+  <div class="cta-right">
+    <button class="store-btn"><i class="fab fa-google-play"></i><span><small>GET IT ON</small>Google Play</span></button>
+    <button class="store-btn"><i class="fab fa-apple"></i><span><small>Download on the</small>App Store</span></button>
+  </div>
+</section>
+
+<!-- =DASHBOARD = -->
+
+<section id="dashboard" class="dashboard-section" style="display: none;">
+
+  <h2>Welcome to your Dashboard</h2>
+
+  <div class="dashboard-stats">
+
+    <div class="stat-box">
+      <h3>12</h3>
+      <p>Total Bookings</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>5</h3>
+      <p>Active Services</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>UGX 500k</h3>
+      <p>Earnings</p>
+    </div>
+
+  </div>
+
+  <!-- FIXED BUTTON FUNCTION -->
+
+  <button class="btn-dark" onclick="filterCategory('education')">
+    Back to Home
+  </button>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-home"></i></div>
+        <div class="logo-text">
+          <strong>AGNES</strong>
+          <span>LOCAL SERVICE HUB</span>
+        </div>
+      </div>
+      <p>Connecting you with trusted local service providers across Uganda.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+
+              <!-- MOVED DASHBOARD LINK OUTSIDE -->
+
+      <a href="javascript:void(0)" onclick="openDashboard()">
+        Provider Dashboard
+      </a>
+
+
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#">FAQs</a>
+    </div>
+    <div class="footer-col">
+      <h4>For Providers</h4>
+      <a href="#">Become a Provider</a>
+      <a href="#">Provider Login</a>
+      <a href="#">Provider Dashboard</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="footer-col" id="how">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-phone"></i> +256 700 123 456 $ 0761469678</p>
+      <p><i class="fas fa-envelope"></i> info@agneslocalhub.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Agnes's Local Services Hub. All Rights Reserved.</p>
+          <p>Made with <i class="fas fa-heart" style="color: white;"></i> in Uganda</p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!--linking my dashboard -->
+<div id="Root"></div>
+<script src="../My project/App.js"></script>
+
+<script src="../My project/script-3.js"></script>
 </body>
 </html>
